@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>JavaScript Event Handler</title>
+<script type="text/javascript">
+	// This function receives an id and gets the related XHTML object.
+	var $ = function(id) {
+		return document.getElementById(id);
+	}
+
+	// This is the event handler for the onclick event of the button.
+	var display_click = function() {
+		alert( "You clicked the button." );
+	}
+
+	// This is the event handler for the onload event of the page.
+	// It is executed after the page is loaded and the DOM has been build.
+	window.onload = function () {
+		// This statement assigns the event handler named display_click
+		// to the onclick event of the XHTML object named btnDisplay
+		$( "btnDisplay" ).onclick = display_click;
+	}
+</script>
+</head>
+<body>
+	<p><input type="button" value="Display Message" id="btnDisplay" /></p>
+</body>
+</html>
